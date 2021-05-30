@@ -1,3 +1,192 @@
 * {
-  background-color: aquamarine;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, monospace, Courier;
+  font-weight: normal;
+}
+
+body {
+  /* background-color: #8bc6ec;
+  background-image: linear-gradient(0deg, #8bc6ec 0%, #9599e2 80%); */
+  background-color: #97d9e1;
+  background-image: linear-gradient(0deg, #cdcdcd 0%, #97d9e1 100%);
+
+  /* background-color: #cdcdcd;
+  background-image: linear-gradient(180deg, #cdcdcd 0%, #97d9e1 100%); */
+
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header {
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-size: 90%;
+  margin-bottom: 20px;
+}
+
+/* .header h1 {
+  padding-bottom: 2%;
+} */
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  border-radius: 5px;
+  max-width: 450px;
+  margin: 120px, auto;
+  width: 100%;
+  padding: 25px;
+  padding-left: 30px;
+  background-color: #f1f1f1;
+  margin: 50px;
+  margin-bottom: 10px;
+  margin-top: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.delete {
+  width: 60px;
+  height: 100%;
+  padding: 3px;
+  color: #20e627;
+  border: none;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  border-radius: 3px;
+
+  /* background-color: rgb(121, 121, 121); */
+  color: rgb(121, 121, 121);
+  border: none;
+
+  transition-duration: 0.2s;
+  border-radius: 3px;
+}
+
+.delete:hover {
+  width: 60px;
+  height: 100%;
+  padding: 3px;
+  background-color: #20e627;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  border-radius: 3px;
+}
+
+.column .inputfield {
+  display: flex;
+  height: 45px;
+  width: 100%;
+  margin: 20px 0;
+  margin-top: 25px;
+}
+
+.inputfield button {
+  width: 60px;
+  height: 100%;
+  background-color: rgb(121, 121, 121);
+  color: #ffffff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition-duration: 0.2s;
+  border-radius: 3px;
+}
+
+.inputfield button:hover {
+  width: 60px;
+  height: 100%;
+  background-color: #20e627;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 3px;
+}
+
+.inputfield input {
+  color: rgb(112, 112, 112);
+  width: 85%;
+  border: none;
+  padding: 5px;
+  height: 100%;
+  border-radius: 2px;
+  outline: none;
+  /* border: 1px solid#ccc; */
+}
+.inputfield input:hover {
+  box-shadow: 0 0 6px rgba(33, 33, 33, 0.2);
+}
+
+.column h2 {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.todolist li {
+  list-style: none;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  background-color: white;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-bottom: 8px;
+  position: relative;
+  padding: 0 15px;
+  text-decoration: none;
+  font-size: 95%;
+}
+
+.done {
+  text-decoration: line-through solid 2px;
+  cursor: pointer;
+}
+
+.todolist li span {
+  background-color: rgb(195, 195, 195);
+  position: absolute;
+  width: 45px;
+  right: 0px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+.todolist li span:hover {
+  background-color: rgb(243, 42, 42);
+  position: absolute;
+  width: 45px;
+  right: 0px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.linethrough {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+#toptext {
+  margin-top: 2%;
+  margin-right: 2%;
+  text-align: right;
+  font-weight: lighter;
+  color: white;
+  font-size: 90%;
+}
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus {
+  border: none;
+  outline: none;
 }
