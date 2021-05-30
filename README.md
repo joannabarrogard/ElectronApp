@@ -1,1 +1,1 @@
-# my eletron app
+# App for goal planning 
