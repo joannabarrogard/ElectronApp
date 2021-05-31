@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . GoalPlanner --out=./builds --overwrite  --icon=app_icons/Logo_4.icns"
+    "build": "electron-packager . Goalplanner --out=./builds --overwrite  --icon=app_icons/Logo_blue.icns"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [

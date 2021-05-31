@@ -1,7 +1,7 @@
 class TodoElement extends HTMLElement {
   inputElm;
   btn;
-	id;
+  id;
   todoList;
   listArr;
   changeTitle;
@@ -11,15 +11,15 @@ class TodoElement extends HTMLElement {
     super();
 
     this.label = label;
-		this.id = "-"+id;
+    this.id = "-" + id;
 
-		let localLabel = localStorage.getItem("title"+ this.id);
-		if(localLabel != null) this.label = localLabel;
+    let localLabel = localStorage.getItem("title" + this.id);
+    if (localLabel != null) this.label = localLabel;
 
     this.classList.add("column");
     this.innerHTML = `<h2 id ="userTitle" contenteditable="true"> ${this.label}</h2>
                     <div class="inputfield">
-                    <input type="text" placeholder="Add your new goal" />
+                    <input type="text" placeholder="Add new goal" />
                     <button><i class="fa fa-plus"></i></button>
                     </div>
                     <ul class="todolist">
@@ -31,10 +31,10 @@ class TodoElement extends HTMLElement {
     this.btn = this.querySelector(".inputfield button");
     this.changeTitle = this.querySelector("#userTitle");
 
-		this.changeTitle.addEventListener("focusout", (event) => {
-			// console.log(this.changeTitle.textContent);
-			this.saveTitle();
-		});
+    this.changeTitle.addEventListener("focusout", (event) => {
+      // console.log(this.changeTitle.textContent);
+      this.saveTitle();
+    });
 
     // Show Value
     this.btn.addEventListener("click", () => {
@@ -112,7 +112,9 @@ function clearAll() {
 
   //   showTodo();
 
-  alert("hej");
+  localStorage.clear;
+
+  // alert("hej");
 }
 
 customElements.define("todo-element", TodoElement);
@@ -128,5 +130,5 @@ mainTodoContainerElement.append(todoCareer);
 let todoHealth = new TodoElement("Health", "list-3");
 mainTodoContainerElement.append(todoHealth);
 
-let todoSocial = new TodoElement("Social", "list-4");
-mainTodoContainerElement.append(todoSocial);
+// let todoSocial = new TodoElement("Social", "list-4");
+// mainTodoContainerElement.append(todoSocial);

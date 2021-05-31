@@ -15,7 +15,7 @@ body {
   /* background-color: #cdcdcd;
   background-image: linear-gradient(180deg, #cdcdcd 0%, #97d9e1 100%); */
 
-  height: 100%;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,9 +27,10 @@ body {
   margin-bottom: 20px;
 }
 
-/* .header h1 {
-  padding-bottom: 2%;
-} */
+.header h1 {
+  pointer-events: none;
+  font-size: 320%;
+}
 
 .main {
   display: flex;
@@ -45,7 +46,7 @@ body {
   padding-left: 30px;
   background-color: #f1f1f1;
   margin: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   margin-top: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

@@ -5,7 +5,7 @@ const path = require("path");
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 530,
+    width: 555,
     height: 900,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
@@ -41,5 +41,3 @@ app.on("window-all-closed", function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-
