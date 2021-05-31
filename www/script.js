@@ -1,20 +1,20 @@
 class TodoElement extends HTMLElement {
   inputElm;
   btn;
+	id;
   todoList;
   listArr;
   changeTitle;
   //   myText;
 
-  constructor(label) {
+  constructor(label, id) {
     super();
 
     this.label = label;
-    if (this.value) {
-      this.label = this.value;
-    } else {
-      this.value = this.label;
-    }
+		this.id = "-"+id;
+
+		let localLabel = localStorage.getItem("title"+ this.id);
+		if(localLabel != null) this.label = localLabel;
 
     this.classList.add("column");
     this.innerHTML = `<h2 id ="userTitle" contenteditable="true"> ${this.label}</h2>
@@ -31,11 +31,15 @@ class TodoElement extends HTMLElement {
     this.btn = this.querySelector(".inputfield button");
     this.changeTitle = this.querySelector("#userTitle");
 
+		this.changeTitle.addEventListener("focusout", (event) => {
+			// console.log(this.changeTitle.textContent);
+			this.saveTitle();
+		});
+
     // Show Value
     this.btn.addEventListener("click", () => {
       this.saveValue();
       this.showTodo();
-      this.saveTitle();
     });
 
     this.todoList.addEventListener("click", (event) => {
@@ -47,16 +51,8 @@ class TodoElement extends HTMLElement {
     this.showTodo();
   }
 
-  get value() {
-    return this.getAttribute("value");
-  }
-
-  set value(newValue) {
-    this.setAttribute("value", newValue);
-  }
-
   saveTitle() {
-    let key = "title" + this.label;
+    let key = "title" + this.id;
     let title = this.changeTitle.innerHTML;
     localStorage.setItem(key, title);
   }
@@ -64,18 +60,18 @@ class TodoElement extends HTMLElement {
   saveValue() {
     //funktion för att lagra brukers input
     let UserTodo = this.inputElm.value;
-    let getLocalStorage = localStorage.getItem("todo" + this.label);
+    let getLocalStorage = localStorage.getItem("todo" + this.id);
     if (getLocalStorage == null) {
       this.listArr = []; //tom array
     } else {
       this.listArr = JSON.parse(getLocalStorage);
     }
     this.listArr.push(UserTodo);
-    localStorage.setItem("todo" + this.label, JSON.stringify(this.listArr));
+    localStorage.setItem("todo" + this.id, JSON.stringify(this.listArr));
   }
 
   showTodo() {
-    let getLocalStorage = localStorage.getItem("todo" + this.label);
+    let getLocalStorage = localStorage.getItem("todo" + this.id);
     if (getLocalStorage == null) {
       this.listArr = []; //tom array
     } else {
@@ -91,16 +87,16 @@ class TodoElement extends HTMLElement {
     this.inputElm.value = "";
 
     // Also show the title.
-    let key = "title" + this.label;
+    let key = "title" + this.id;
     let title = localStorage.getItem(key);
     this.changeTitle.value = title;
   }
 
   deleteTask(index) {
-    let getLocalStorage = localStorage.getItem("todo" + this.label);
+    let getLocalStorage = localStorage.getItem("todo" + this.id);
     this.listArr = JSON.parse(getLocalStorage);
     this.listArr.splice(index, 1);
-    localStorage.setItem("todo" + this.label, JSON.stringify(this.listArr));
+    localStorage.setItem("todo" + this.id, JSON.stringify(this.listArr));
 
     this.showTodo();
   }
@@ -123,14 +119,14 @@ customElements.define("todo-element", TodoElement);
 
 let mainTodoContainerElement = document.querySelector(".main");
 
-let todoEducation = new TodoElement("Education");
+let todoEducation = new TodoElement("Education", "list-1");
 mainTodoContainerElement.append(todoEducation);
 
-let todoCareer = new TodoElement("Career");
+let todoCareer = new TodoElement("Career", "list-2");
 mainTodoContainerElement.append(todoCareer);
 
-let todoHealth = new TodoElement("Health");
+let todoHealth = new TodoElement("Health", "list-3");
 mainTodoContainerElement.append(todoHealth);
 
-let todoSocial = new TodoElement("Social");
+let todoSocial = new TodoElement("Social", "list-4");
 mainTodoContainerElement.append(todoSocial);
