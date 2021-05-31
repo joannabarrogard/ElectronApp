@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, monospace, Courier;
+  font-weight: normal;
+}
+
+body {
+  background-color: #97d9e1;
+  background-image: linear-gradient(0deg, #cdcdcd 0%, #97d9e1 100%);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.wrapper {
+  /* min-width: 350px; */
+  max-width: 1200px;
+  min-height: 300px;
+  height: 90vh;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  font-size: 90%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+
+  /* margin-bottom: 20px; */
+}
+
+.header h1 {
+  pointer-events: none;
+  font-size: 320%;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+
+.header p {
+  margin-top: 40px;
+  font-size: 120%;
+}
+.logo {
+  position: fixed;
+  background-repeat: no-repeat;
+  float: left;
+  width: 180px;
+  height: 150px;
+  /* background-image: url(/app_icons/Logo_blue.icns); */
+
+  border-radius: 50px;
+  /* z-index: 2; */
+}
+
+.download {
+  flex: none;
+  background-color: white;
+  border-radius: 30px;
+  padding: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+  letter-spacing: -0.03em;
+}
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+a:hover {
+  color: white;
+}
+
+#macbook {
+  width: 400px;
+  height: auto;
+  margin-bottom: 5%;
+}
+.download:hover {
+  flex: none;
+  background-color: #097d9e;
+  color: white;
+  border-radius: 30px;
+  padding: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+  letter-spacing: -0.03em;
+}
