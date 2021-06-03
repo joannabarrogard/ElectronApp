@@ -107,12 +107,11 @@ deleteAll.addEventListener("click", clearAll);
 
 //delete all list items
 function clearAll() {
-  //   listArr = [];
+  listArr = [];
+  localStorage.removeItem("listArr");
   //   localStorage.setItem("New Todo", JSON.stringify(listArr));
 
   //   showTodo();
-
-  localStorage.clear;
 
   // alert("hej");
 }
